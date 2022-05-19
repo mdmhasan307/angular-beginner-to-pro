@@ -1,17 +1,15 @@
-var Point = /** @class */ (function () {
-    function Point(x, y) {
-        this.x = x;
-        this.y = y;
-    }
-    Point.prototype.draw = function () {
-        console.log(' (X, Y)= (' + this.x + ', ' + this.y + ')');
-    };
-    Point.prototype.getDistance = function () {
-        //...
-    };
-    return Point;
-}());
-var point = new Point(-4, 7);
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var like_component_1 = require("./like.component");
+var point_1 = require("./point");
+var point = new point_1.Point(-4, 7);
+var x = point.getX();
+console.log(' Initial X: ' + x);
+point.setX(10);
 //point.x = 1;
 //point.y = 3;
 point.draw();
+console.log('======================LikesCount=================================');
+var component = new like_component_1.LikeComponent(10, true);
+component.onClick();
+console.log("LikesCount: " + component.likesCount + ", isSelected: " + component.isSelected);
